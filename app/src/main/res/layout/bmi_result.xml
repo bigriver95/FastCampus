@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BmiResult"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/bmi_re"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:text="BMI 수치 = 12.5"
+        android:maxLength="13"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/bmi_re_text"
+        android:autoSizeTextType="uniform"
+        android:text="정상입니다"
+        android:textStyle="bold"
+        android:gravity="center"/>
+    <TextView
+        android:text="공식 = 몸무게(kg) / 키(m) * 키(m)\n\n18.5 이하면 저체중\n\n18.5 ~ 23은 정상체중\n\n23 ~ 25는 과체중\n\n25 ~ 30은 경도비만\n\n30 ~ 35는 중정도 비만\n\n35이상은 고도 비만"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:textStyle="bold"
+        android:textColor="#673AB7"/>
+/</LinearLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lotto">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:id="@+id/lotto_title"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:text="로또 번호 생성기"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lotto_picker"/>
+
+    <NumberPicker
+        android:id="@+id/lotto_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lotto_title" />
+
+    <Button
+        android:text="번호 선택"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/lotto_reset"
+        android:id="@+id/lotto_select"
+        app:layout_constraintTop_toBottomOf="@id/lotto_picker"
+        android:layout_width="150dp"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:layout_height="60dp"/>
+
+    <Button
+        android:text="초기화"
+        app:layout_constraintStart_toEndOf="@id/lotto_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/lotto_reset"
+        android:layout_width="150dp"
+        app:layout_constraintTop_toTopOf="@id/lotto_select"
+        android:layout_height="60dp"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/lotto_random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lotto_select"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/lotto_number1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textSize="40sp"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/number_ball_y"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_marginRight="10dp"
+            android:id="@+id/lotto_number2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="1"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:background="@drawable/number_ball_gr"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:textSize="40sp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/lotto_number3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:background="@drawable/number_ball_r"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:textSize="40sp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/lotto_number4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:background="@drawable/number_ball_b"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:textSize="40sp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/lotto_number5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:background="@drawable/number_ball_g"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:textSize="40sp"
+            android:id="@+id/lotto_number6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:background="@drawable/number_ball_g"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/lotto_random"
+        android:text="랜덤 번호 추출"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
