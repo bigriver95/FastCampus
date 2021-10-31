@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FastStudy">
-        <activity android:name=".Secret"></activity>
+        <activity android:name=".SecretDiary"></activity>
+        <activity android:name=".Secret" />
         <activity android:name=".Lotto" />
         <activity android:name=".BmiResult" />
         <activity android:name=".BmiCalculator" />

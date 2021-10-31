@@ -1,15 +1,15 @@
 package com.example.faststudy
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.edit
-import kotlinx.android.synthetic.main.activity_secret.*
-import kotlin.math.max
-import kotlin.math.min
+import kotlinx.android.synthetic.main.secret.*
+
 
 class Secret : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class Secret : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_secret)
+        setContentView(R.layout.secret)
 
         password_1.apply {
             minValue = 0
@@ -54,6 +54,8 @@ class Secret : AppCompatActivity() {
             val passwordUser = "${password_1.value}${password_2.value}${password_3.value}${password_4.value}"
 
             if(passwordPrefernces.getString("password","0000").equals(passwordUser)){
+                val ds = Intent(this,SecretDiary::class.java)
+                startActivity(ds)
             }else{
                 FailDialog()
             //실패
