@@ -22,5 +22,10 @@ class MainActivity : AppCompatActivity() {
             val secret = Intent(this,Secret::class.java)
             startActivity(secret)
         }
+        calculator_bt.setOnClickListener {
+            val calculator = Intent(this,Calculator::class.java)
+            startActivity(calculator)
+        }
     }
+
 }

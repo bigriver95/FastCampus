@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculator">
+
+    <View
+        android:id="@+id/topLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/alculator_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/expression_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="end"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/result_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="end"
+        android:text="0"
+        android:textColor="#FA0000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/alculator_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+
+    <TableLayout
+        android:id="@+id/alculator_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingStart="15dp"
+        android:paddingTop="21dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="21dp"
+        android:shrinkColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayout"
+        app:layout_constraintVertical_weight="1.5">
+
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clear_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="clearBt"
+                android:stateListAnimator="@null"
+                android:text="C"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:enabled="false"
+                android:stateListAnimator="@null"
+                android:text="()"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_modulo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="%"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_division"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="/"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
+
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="7"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="8"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="9"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_multiply"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="x"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="4"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="5"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="6"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="-"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="1"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_2"
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="2"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="3"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="+"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/history_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="historyBt"
+                android:src="@drawable/ic_baseline_access_time_24"
+                android:stateListAnimator="@null"
+                android:text=""
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_0"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:onClick="buttonClick"
+                android:stateListAnimator="@null"
+                android:text="0"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button"
+                android:clickable="false"
+                android:enabled="false"
+                android:stateListAnimator="@null"
+                android:text="."
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/result_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/calculator_button_green"
+                android:onClick="resultBt"
+                android:stateListAnimator="@null"
+                android:text="="
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/history_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/alculator_layout"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/history_close"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:onClick="closeHistoryButton"
+            android:stateListAnimator="@null"
+            android:text="닫기"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/history_clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history_close">
+
+            <LinearLayout
+                android:id="@+id/history_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/history_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginEnd="47dp"
+            android:layout_marginBottom="38dp"
+            android:autoSizeTextType="uniform"
+            android:background="@color/green"
+            android:onClick="clearHistoryButton"
+            android:stateListAnimator="@null"
+            android:text="계산기록 삭제"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
