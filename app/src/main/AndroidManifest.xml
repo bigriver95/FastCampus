@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.faststudy">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FastStudy">
-        <activity android:name=".Calculator"></activity>
+        <activity android:name=".Recorder"></activity>
+        <activity android:name=".OrangeTimer" />
+        <activity android:name=".PhotoFrame" />
+        <activity android:name=".Photo" />
+        <activity android:name=".Calculator" />
         <activity android:name=".SecretDiary" />
         <activity android:name=".Secret" />
         <activity android:name=".Lotto" />

@@ -26,6 +26,20 @@ class MainActivity : AppCompatActivity() {
             val calculator = Intent(this,Calculator::class.java)
             startActivity(calculator)
         }
+
+        photo_bt.setOnClickListener{
+            val photo = Intent(this,Photo::class.java)
+            startActivity(photo)
+        }
+
+        orange_bt.setOnClickListener {
+            val orange = Intent(this,OrangeTimer::class.java)
+            startActivity(orange)
+        }
+        record_et.setOnClickListener {
+            val record = Intent(this,Recorder::class.java)
+            startActivity(record)
+        }
     }
 
 }
