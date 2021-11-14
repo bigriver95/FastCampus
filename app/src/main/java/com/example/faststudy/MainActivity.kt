@@ -40,6 +40,14 @@ class MainActivity : AppCompatActivity() {
             val record = Intent(this,Recorder::class.java)
             startActivity(record)
         }
+        alarm_bt.setOnClickListener {
+            val alarm = Intent(this,Alarm::class.java)
+            startActivity(alarm)
+        }
+        quote_bt.setOnClickListener {
+            val quote = Intent(this,Quote::class.java)
+            startActivity(quote)
+        }
     }
 
 }

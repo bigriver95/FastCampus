@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -35,6 +36,8 @@ android {
 
 dependencies {
 
+
+
     def room_version = "2.2.5"
 
     implementation "androidx.room:room-runtime:$room_version"
@@ -43,6 +46,12 @@ dependencies {
     implementation "androidx.room:room-rxjava2:$room_version"
     implementation "androidx.room:room-guava:$room_version"
     testImplementation "androidx.room:room-testing:$room_version"
+
+
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
 
     apply plugin: 'kotlin-android-extensions'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

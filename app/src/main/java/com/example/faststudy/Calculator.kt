@@ -41,7 +41,7 @@ class Calculator : AppCompatActivity() {
         ).build()
     }
 
-    fun buttonClick(v: View){ //여러개의 숫자와 연산자
+        fun buttonClick(v: View){ //여러개의 숫자와 연산자
         when(v.id){
             R.id.bt_0 -> numberBtClick("0")
             R.id.bt_1 -> numberBtClick("1")

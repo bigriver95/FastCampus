@@ -3,7 +3,7 @@
     package="com.example.faststudy">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FastStudy">
-        <activity android:name=".Recorder"></activity>
+        <activity android:name=".Quote"></activity>
+        <activity android:name=".Alarm" />
+        <activity android:name=".Recorder" />
         <activity android:name=".OrangeTimer" />
         <activity android:name=".PhotoFrame" />
         <activity android:name=".Photo" />
@@ -29,6 +31,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.example.a.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
