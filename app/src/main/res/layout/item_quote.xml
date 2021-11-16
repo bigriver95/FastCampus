@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/quoteTextView"
+        android:textSize="24sp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end|center_vertical"
+        app:layout_constraintVertical_bias="0.4"
+        android:text="앞으로 나아가다 보면 언젠가 간절히 되찾고 싶던\n 과거를 미래에서 다시만나게 될 수 있을 지도 모르니까요"
+        app:layout_constraintBottom_toTopOf="@+id/nameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/nameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end|center_vertical"
+        android:text="시이타케"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/quoteTextView"
+        app:layout_constraintStart_toStartOf="@id/quoteTextView"
+        app:layout_constraintTop_toBottomOf="@+id/quoteTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

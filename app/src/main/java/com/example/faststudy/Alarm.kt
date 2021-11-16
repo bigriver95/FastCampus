@@ -1,9 +1,14 @@
 package com.example.faststudy
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.alarm.*
+import kotlinx.android.synthetic.main.alculator.*
+import kotlinx.android.synthetic.main.alculator.result_tv
+import kotlinx.android.synthetic.main.history_row.*
 
 class Alarm : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,6 +16,15 @@ class Alarm : AppCompatActivity() {
         setContentView(R.layout.alarm)
 
         initFirebase()
+        updateResult()
+    }
+
+    //
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        //새로 들어온걸로 교체 해줘야함
+        updateResult(true)
     }
 
     //파이어베이스 사용법
@@ -27,15 +41,15 @@ class Alarm : AppCompatActivity() {
 
         /* 채널을 만들때 중요도 설정
            -   8.0이상에 채널의 중요도
-           -   7.0이하는 notify마다 중요도를 설정해줘야함
-
-
-         */
-
-
-
-
-
+           -   7.0이하는 notify마다 중요도를 설정해줘야함*/
+    }
+    //isNewIntent는 앱이 켜져있는데 실행했냐? 꺼져있는데 켜져있었냐? 아니면 꺼져 있
+    @SuppressLint("SetTextI18n")
+    private fun updateResult(isNewIntent: Boolean = false){
+        alarm_result.text = (intent.getStringExtra("notificationType") ?: "앱 런처") +
+                if(isNewIntent){
+            " (으)로 갱신했습니다."
+        }else{"(으)로 실행했습니다."}
     }
 
 }

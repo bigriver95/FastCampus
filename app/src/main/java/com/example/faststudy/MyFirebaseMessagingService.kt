@@ -3,12 +3,17 @@ package com.example.a
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_UPDATE_CURRENT
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.example.faststudy.Alarm
 import com.example.faststudy.NotificationType
+import com.example.faststudy.Quote
 import com.example.faststudy.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -63,12 +68,26 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         type : NotificationType,
         title:String?, message:String?
     ): Notification {
+
+        val intent = Intent(this, Alarm::class.java).apply {
+            putExtra("notificationType","${type.title}타입")
+            addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            // 기존의 액티비티를 쌓는 방식은 스텐다드 방식 ->
+            // B의 화면이 떠있는 상태에서 또 B의 화면이 갱신 되면 이상하게 보일 수 있기 때문에
+        }
+
+        //FLAG_UPDATE_CURRENT 는 PendingIntent 정의된 상수임
+        //PendingIntent = 누군가에게 Intent를 다룰 수 있는 권한을 주는거
+        val pendingIntent = PendingIntent.getActivity(this, type.id, intent, FLAG_UPDATE_CURRENT)
+
         val notificationBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notifications)
             .setContentTitle(title)
             .setContentText(message)
-            //
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setContentIntent(pendingIntent)
+            //메세지를 탭을 하게되면 자동으로 삭제하게 해줌
+            .setAutoCancel(true)
 
         when(type){
             NotificationType.NORMAL -> Unit
