@@ -1,6 +1,5 @@
 package com.example.a
 
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -11,9 +10,8 @@ import android.os.Build
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.example.faststudy.Alarm
+import com.example.faststudy.Notification
 import com.example.faststudy.NotificationType
-import com.example.faststudy.Quote
 import com.example.faststudy.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -67,9 +65,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     private fun createNotification(
         type : NotificationType,
         title:String?, message:String?
-    ): Notification {
+    ): android.app.Notification {
 
-        val intent = Intent(this, Alarm::class.java).apply {
+        val intent = Intent(this, Notification::class.java).apply {
             putExtra("notificationType","${type.title}타입")
             addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             // 기존의 액티비티를 쌓는 방식은 스텐다드 방식 ->
